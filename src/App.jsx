@@ -1,10 +1,11 @@
 import "./App.css";
-import Dashboard from "./components/Dashboard";
+import PermanentDrawerLeft from "./components/Drawer";
+import { Drawer } from "@mui/material";
 
 function App() {
   return (
     <>
-      <Dashboard />
+      <PermanentDrawerLeft />
     </>
   );
 }
