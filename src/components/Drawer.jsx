@@ -1,27 +1,28 @@
-import * as React from "react";
-import Drawer from "@mui/material/Drawer";
-import CssBaseline from "@mui/material/CssBaseline";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
+import {
+  Drawer,
+  CssBaseline,
+  AppBar,
+  Toolbar,
+  List,
+  Typography,
+  Divider,
+  ListItem,
+  Box,
+  Stack,
+  Paper,
+  Chip,
+  styled,
+} from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import WidgetsIcon from "@mui/icons-material/Widgets";
-import Box from "@mui/material/Box";
-import { Chip } from "@mui/material";
-import Stack from "@mui/material/Stack";
-import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import MoneyIcon from "@mui/icons-material/Money";
 import CustomizedTable from "./StickyHeadTable";
+import { mockTransactions } from "../mockTransactions";
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 const DemoPaper = styled(Paper)(() => ({
   width: 180,
@@ -46,6 +47,7 @@ export default function PermanentDrawerLeft() {
           </Typography>
         </Toolbar>
       </AppBar>
+
       <Drawer
         sx={{
           width: drawerWidth,
@@ -58,8 +60,6 @@ export default function PermanentDrawerLeft() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar />
-        <WidgetsIcon />
         <Box>
           <Typography variant="h3" component="div">
             King's Restaurant
@@ -68,7 +68,9 @@ export default function PermanentDrawerLeft() {
             Dashboard Owner
           </Typography>
         </Box>
+
         <Divider />
+
         <List>
           <ListItem>
             <Chip
