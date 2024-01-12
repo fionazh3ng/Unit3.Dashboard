@@ -65,13 +65,11 @@ export default function StickyHeadTable() {
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <Typography variant="h6">Recent Transactions</Typography>
-          </TableHead>
+          <TableHead></TableHead>
           <TableBody key={mockTransactions}>
-            {mockTransactions.map((transactions) => {
+            {mockTransactions.map((transactions, idx) => {
               return (
-                <TableRow hover key={transactions}>
+                <TableRow hover key={idx}>
                   <TableCell key="txId">{transactions.txId}</TableCell>
                   <TableCell key="user">{transactions.user}</TableCell>
                   <TableCell key="date">{transactions.date}</TableCell>

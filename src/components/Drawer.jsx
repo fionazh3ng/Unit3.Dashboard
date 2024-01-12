@@ -8,27 +8,13 @@ import {
   Divider,
   ListItem,
   Box,
-  Stack,
-  Paper,
   Chip,
-  styled,
 } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
-import MoneyIcon from "@mui/icons-material/Money";
-import CustomizedTable from "./StickyHeadTable";
-import { mockTransactions } from "../mockTransactions";
+import DataDisplay from "./DataDisplay";
 
 const drawerWidth = 300;
-
-const DemoPaper = styled(Paper)(() => ({
-  width: 180,
-  height: 120,
-  textAlign: "center",
-}));
 
 export default function PermanentDrawerLeft() {
   return (
@@ -88,32 +74,7 @@ export default function PermanentDrawerLeft() {
           </ListItem>
         </List>
       </Drawer>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
-      >
-        <Toolbar />
-        <Stack direction="row" spacing={5}>
-          <DemoPaper square={false}>
-            <PointOfSaleIcon />
-            Sales Obtained
-          </DemoPaper>
-          <DemoPaper square>
-            <PersonAddIcon />
-            New Clients
-          </DemoPaper>
-          <DemoPaper square>
-            <TrafficIcon />
-            Traffic Received
-          </DemoPaper>
-        </Stack>
-        <Divider />
-        <DemoPaper square>
-          <MoneyIcon />
-          Revenue Generated
-        </DemoPaper>
-        <CustomizedTable />
-      </Box>
+      <DataDisplay />
     </Box>
   );
 }
